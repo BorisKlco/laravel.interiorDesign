@@ -11,12 +11,13 @@
                     <h2 class="sm:text-xl">Only 1 winner!</h2>
                 </div>
             </div>
-            <div class="flex flex-col gap-6 items-center">
+            {{-- <div class="flex flex-col gap-6 items-center">
                 <h4 class="sm:text-2xl">Round 1</h4>
                 <div class="flex flex-col sm:flex-row gap-8 sm:gap-16 w-full">
-                    {{-- <x-pickem-card url='/images/bohemian/01f562260b794d9498f81fcc5863289d.webp' />
-                    <x-pickem-card url='/images/country/0a40a276d9fc4ca882f7998c6befe7f8.webp' /> --}}
+                    <x-pickem-card url='/images/bohemian/01f562260b794d9498f81fcc5863289d.webp' />
+                    <x-pickem-card url='/images/country/0a40a276d9fc4ca882f7998c6befe7f8.webp' />
                 </div>
-            </div>
+            </div> --}}
+            <livewire:pickem>
         </div>
 </x-layout>
