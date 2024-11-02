@@ -10,10 +10,12 @@ Route::get('/', function () {
         $styles = Style::where('name', '=', $userChoice)->firstOrFail();
         $images = Image::with('style', 'tags')
             ->where('style_id', $styles->id)
+            ->inRandomOrder()
             ->paginate(12)
             ->appends(['style' => request('style')]);
     } else {
         $images = Image::with('style', 'tags')
+            ->inRandomOrder()
             ->paginate(12)
             ->appends(['style' => request('style')]);
     }
@@ -26,9 +28,4 @@ Route::get('search', function () {
 
 Route::get('pickem', function () {
     return view('pickem');
-});
-
-Route::get('/test', function () {
-    $test = Image::with('style', 'tags')->first();
-    return view('test', ['img' => $test]);
 });

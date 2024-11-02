@@ -1,6 +1,6 @@
 <div class="flex flex-col gap-6 items-center">
     @if ($round == 1)
-        <h4 class="sm:text-2xl">Round {{ $round }}</h4>
+        <h4 class="text-2xl">Round {{ $round }}</h4>
         <div class="flex flex-col sm:flex-row gap-8 sm:gap-16 w-full">
             <x-pickem-card url='storage/{{ $currentRound[0][0]->style->name }}/{{ $currentRound[0][0]->name }}' id=0
                 style='{{ $currentRound[0][0]->style->name }}' />
@@ -8,13 +8,13 @@
                 style='{{ $currentRound[0][1]->style->name }}' />
         </div>
     @elseif ($round == 5)
-        <h4 class="sm:text-2xl">Winner!!! {{ $round }}</h4>
+        <h4 class="text-2xl">Winner!!! </h4>
         <div class="flex flex-col sm:flex-row gap-8 sm:gap-16 w-full">
             <x-pickem-card url='storage/{{ $currentRound[0]->style->name }}/{{ $currentRound[0]->name }}' id=0
                 style='{{ $currentRound[0]->style->name }}' :winner='true' />
         </div>
     @elseif ($round > 1)
-        <h4 class="sm:text-2xl">Round {{ $round }}</h4>
+        <h4 class="text-2xl">Round {{ $round }}</h4>
         <div class="flex flex-col sm:flex-row gap-8 sm:gap-16 w-full">
             <x-pickem-card url='storage/{{ $currentRound[0]->style->name }}/{{ $currentRound[0]->name }}' id=0
                 style='{{ $currentRound[0]->style->name }}' />
@@ -30,17 +30,4 @@
                 game</button>
         </div>
     @endif
-    {{-- @if ($nextRound)
-        {{ count($nextRound) }}
-        @foreach ($nextRound as $item)
-            <p>{{ $item }}</p>
-        @endforeach
-        <h1>BREAK</h1>
-        {{ count($currentRound) }}
-        @foreach ($currentRound as $itemm)
-            <p>1 -{{ $itemm[0] }}</p>
-            <p>2 -{{ $itemm[1] }}</p>
-        @endforeach
-    @endif --}}
-
 </div>
