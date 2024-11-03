@@ -54,16 +54,9 @@
                                 <a href="detail/{{ $item->id }}">Open</a>
                             </span>
                         </p>
-                        <form id="likes-{{ $item->id }}"
-                            class="absolute divide-x divide-gray-400 border-t border-gray-400 bg-white/40 -bottom-10 w-full group-hover:bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-200 flex">
-                            @csrf
-                            <button hx-post="/t/{{ $item->id }}?vote=1" hx-target="#likes-{{ $item->id }}"
-                                class="h-[3rem] basis-1/2 text-center hover:text-xl transition-all duration-75">🥰</button>
-                            <button hx-post="/t/{{ $item->id }}?vote=0" hx-target="#likes-{{ $item->id }}"
-                                class="h-[3rem] basis-1/2 text-center hover:text-xl transition-all duration-75">🙅‍♀️</button>
-                        </form>
-                        <a href="detail/{{ $item->id }}" class="hidden sm:block absolute w-full h-[85%]">
-                        </a>
+                        <livewire:vote :key="$item->id" :$item>
+                            <a href="detail/{{ $item->id }}" class="hidden sm:block absolute w-full h-[85%]">
+                            </a>
                     </li>
                 @endforeach
             </ul>

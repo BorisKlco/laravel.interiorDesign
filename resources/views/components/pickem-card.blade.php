@@ -1,4 +1,4 @@
-@props(['url', 'id', 'style', 'winner' => false])
+@props(['url', 'id', 'style', 'winner' => false, 'detail' => false])
 
 @php
     $defaults = [
@@ -7,15 +7,23 @@
         'style' => 'background-image: url(' . $url . ');',
     ];
 @endphp
-
-<section {{ $attributes($defaults) }}>
-    <span
-        class="select-none inline-flex items-center
+@if ($winner)
+    <a href="/detail/{{ $detail }}" {{ $attributes($defaults) }}>
+        <span
+            class="select-none inline-flex items-center
         rounded-md bg-gray-50
         px-2 py-1 mt-4 ml-4
         font-medium text-gray-600
         ring-1 ring-inset ring-gray-500/10 shadow-sm">{{ Str::ucfirst($style) }}</span>
-    @if (!$winner)
+    </a>
+@else
+    <section {{ $attributes($defaults) }}>
+        <span
+            class="select-none inline-flex items-center
+        rounded-md bg-gray-50
+        px-2 py-1 mt-4 ml-4
+        font-medium text-gray-600
+        ring-1 ring-inset ring-gray-500/10 shadow-sm">{{ Str::ucfirst($style) }}</span>
         <button wire:click='userPick({{ $id }})'
             class="absolute -top-16 text-6xl h-full w-full
             group-hover:top-0 opacity-0 group-hover:opacity-100
@@ -23,5 +31,5 @@
             flex items-center justify-center">
             💖
         </button>
-    @endif
-</section>
+    </section>
+@endif

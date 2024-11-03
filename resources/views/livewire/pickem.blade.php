@@ -9,9 +9,9 @@
         </div>
     @elseif ($round == 5)
         <h4 class="text-2xl">Winner!!! </h4>
-        <div class="flex flex-col sm:flex-row gap-8 sm:gap-16 w-full">
+        <div class="flex w-full lg:w-[80%]">
             <x-pickem-card url='storage/{{ $currentRound[0]->style->name }}/{{ $currentRound[0]->name }}' id=0
-                style='{{ $currentRound[0]->style->name }}' :winner='true' />
+                style='{{ $currentRound[0]->style->name }}' :winner='true' :detail='$currentRound[0]->id' />
         </div>
     @elseif ($round > 1)
         <h4 class="text-2xl">Round {{ $round }}</h4>
