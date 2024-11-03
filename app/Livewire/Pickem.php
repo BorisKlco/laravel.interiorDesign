@@ -5,7 +5,6 @@ namespace App\Livewire;
 use App\Models\Image;
 use App\Models\Style;
 use Livewire\Component;
-use Illuminate\Support\Arr;
 
 class Pickem extends Component
 {

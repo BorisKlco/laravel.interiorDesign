@@ -9,6 +9,7 @@ class Vote extends Component
 {
     public $item;
     public $disabled = false;
+    public $detail = false;
 
     public function like($id)
     {

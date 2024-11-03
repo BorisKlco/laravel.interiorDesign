@@ -15,4 +15,9 @@ class Image extends Model
     {
         return $this->belongsToMany(Tag::class, Image_tag::class);
     }
+
+    public function likes()
+    {
+        return $this->hasOne(Like::class);
+    }
 }
