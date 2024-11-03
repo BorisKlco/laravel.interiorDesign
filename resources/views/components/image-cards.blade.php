@@ -8,7 +8,7 @@
             style="background-image: url('{{ asset($filename) }}')">
             <p class="absolute -top-36 h-[2rem] group-hover:top-0 transition-all duration-200 pl-2 pt-2 font-bold">
                 <span
-                    class="select-none inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 shadow-sm">{{ $item->style->name }}</span>
+                    class="select-none inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-xs font-medium text-gray-600 ring-1 ring-inset ring-gray-500/10 shadow-sm">{{ Str::ucfirst($item->style->name) }}</span>
 
                 @php
                     $colors = [
